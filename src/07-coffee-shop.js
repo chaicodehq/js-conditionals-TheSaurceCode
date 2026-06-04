@@ -31,5 +31,85 @@
  * @returns {number} Total price or -1 for invalid input
  */
 export function calculateCoffeePrice(size, type, extras = {}) {
-  // Your code here
+  if(!["small", "medium", "large"].includes(size)){
+        return -1;
+  }
+  if (!["regular", "latte", "cappuccino", "mocha"].includes(type)){
+    return -1;
+  }
+  if(size , type){
+    if (size=="small") {
+      let amount = 3;
+      if (type=="regular"){
+        amount +=0.00;
+        if(extras.whippedCream) amount += 0.50;
+        if(extras.extraShot) amount += 0.75;
+        return amount;
+      }
+      if (type=="latte"){
+        amount +=1;
+        if(extras.whippedCream ) amount += 0.50;
+        if(extras.extraShot) amount += 0.75;
+        return amount
+      }else if(type=="cappuccino"){
+        amount+=1.50;
+        if(extras.whippedCream) amount += 0.50;
+        if(extras.extraShot) amount += 0.75;
+        return amount;
+      }else if(type=="mocha"){
+         amount+=2;
+        if(extras.whippedCream) amount += 0.50;
+        if(extras.extraShot) amount += 0.75;
+        return amount;
+      }
+    } else if(size == "medium"){
+      let amount = 4;
+      if (type=="regular"){
+        amount +=0.00;
+        if(extras.whippedCream) amount += 0.50;
+        if(extras.extraShot) amount += 0.75;
+        return amount;
+      }
+      if (type=="latte"){
+        amount +=1;
+        if(extras.whippedCream ) amount += 0.50;
+        if(extras.extraShot) amount += 0.75;
+        return amount;
+      }else if(type=="cappuccino"){
+        amount+=1.50;
+        if(extras.whippedCream) amount += 0.50;
+        if(extras.extraShot) amount += 0.75;
+        return amount;
+      }else if(type=="mocha"){
+         amount+=2;
+        if(extras.whippedCream) amount += 0.50;
+        if(extras.extraShot) amount += 0.75;
+        return amount;
+      }
+    }else if(size == "large"){
+      let amount = 5;
+      if (type=="regular"){
+        amount +=0.00;
+        if(extras.whippedCream) amount += 0.50;
+        if(extras.extraShot) amount += 0.75;
+        return amount;
+      }
+      if (type=="latte"){
+        amount +=1;
+        if(extras.whippedCream ) amount += 0.50;
+        if(extras.extraShot) amount += 0.75;
+        return amount;
+      }else if(type=="cappuccino"){
+        amount+=1.50;
+        if(extras.whippedCream) amount += 0.50;
+        if(extras.extraShot) amount += 0.75;
+        return amount;
+      }else if(type=="mocha"){
+         amount+=2;
+        if(extras.whippedCream) amount += 0.50;
+        if(extras.extraShot) amount += 0.75;
+        return amount;
+      }
+    }
+  }
 }
