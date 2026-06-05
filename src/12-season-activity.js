@@ -1,3 +1,4 @@
+
 /**
  * 🗺️ WanderLust Travel Planner
  *
@@ -31,5 +32,27 @@
  * @returns {{ season: string, activity: string } | null}
  */
 export function getSeasonActivity(month, temperature) {
-  // Your code here
+  if(month>12 || month<1) return null;
+  
+  if([12,1,2].includes(month)){
+    const seasonis ="Winter";
+    if(temperature<0)return {season:seasonis, activity:"skiing"};
+    if(temperature>=0) return { season:seasonis , activity:"ice skating"}
+  }
+
+  if([3,4,5].includes(month)){
+    const seasonis ="Spring";
+    if(temperature<=20)return {season:seasonis, activity:"museum visit"};
+    if(temperature>20) return { season:seasonis , activity:"hiking"}
+  }
+  if([6,7,8].includes(month)){
+    const seasonis ="Summer";
+    if(temperature<=35)return {season:seasonis, activity:"cycling"};
+    if(temperature>35) return { season:seasonis , activity:"swimming"}
+  }
+  if([9,10,11].includes(month)){
+    const seasonis ="Autumn";
+    if(temperature<=15)return {season:seasonis, activity:"reading at a cafe"};
+    if(temperature>15) return { season:seasonis , activity:"nature walk"}
+  }
 }
